@@ -1,0 +1,50 @@
+
+spring:
+  cloud:
+    #ribbon重试机制
+    loadbalancer:
+      retry:
+        enabled: true
+
+ribbon:
+  ReadTimeout: 28000
+  ConnectTimeout: 2000
+  MaxAutoRetries: 1
+  MaxAutoRetriesNextServer: 1
+  okToRetryOnAllOperations: true
+
+#hystrix
+hystrix:
+  threadpool:
+    default:
+      coreSize: 100
+  command:
+    circuitBreaker:
+      #当在配置时间窗口内达到此数量后的失败，进行短路。
+      requestVolumeThreshold: 1000
+
+    default:
+      execution:
+        timeout:
+          enabled: true
+        isolation:
+          thread:
+            #2分钟熔断 (ReadTimeout+ConnectTimeout) * (1 + MaxAutoRetries) * (1 + MaxAutoRetriesNextServer)
+            timeoutInMilliseconds: 120000
+  
+zuul:
+  #API网关在进行请求路由转发前为请求设置Host头信息
+  add-host-header: true
+  host:
+    #总连接数
+    maxTotalConnections: 20000
+    #每个路由连接数
+    maxPerRouteConnections: 2000
+    #eureka 的服务用ribbon 但静态url用这两个配置
+    socket-timeout-millis: 60000
+    connect-timeout-millis: 60000
+  #信号量控制，本质上是限流策略
+  ribbon-isolation-strategy: semaphore
+  semaphore:
+    max-semaphores: 5000
+  sensitive-headers:

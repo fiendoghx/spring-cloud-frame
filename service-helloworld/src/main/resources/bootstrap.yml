@@ -1,0 +1,24 @@
+
+#添加HTTP basic基本验证
+security:
+  basic:
+    enabled: false
+  user:
+    name: service
+    password: service_123
+
+custom:
+  eurekaServer:
+    name: eureka
+    password: eureka_132
+
+spring:
+  application:
+    name: service-helloworld
+#spring:
+#  profiles:
+#    active: dev
+
+
+server:
+  port: 13001

@@ -1,0 +1,6 @@
+eureka:
+  instance:
+    hostname: spring-cloud-02
+  client:
+    serviceUrl:
+      defaultZone: http://${security.user.name}:${security.user.password}@spring-cloud-02:${server.port}/eureka/
