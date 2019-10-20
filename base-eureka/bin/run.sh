@@ -5,7 +5,7 @@ Tag="base-eureka"
 #主程序启动文件
 MainClass="../resource/base-eureka-1.0.jar "
 #JVM参数配置
-JVM="-server -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=128m -Xms1g -Xmx1g -Xmn512g -Xss256k -XX:SurvivorRatio=8 -XX:+UseConcMarkSweepGC"
+JVM="-server -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=128m -Xms256m -Xmx256m -Xmn128m -Xss256k -XX:SurvivorRatio=8 -XX:+UseConcMarkSweepGC"
 #主程序文件路径
 #MainProgram="../resource/BOOT-INF/classes "
 #主程序参数
@@ -25,9 +25,9 @@ function start()
     if [[ "$pid" != "" ]]; then
         echo "Warning: start fail! app is running,pid is $pid"
     else
-        nohup java -Dappliction=${Tag} ${JVM} -jar ${MainClass}  > ${Empty} 2>&1 &
+        nohup java -Dappliction=${Tag} ${JVM} -jar ${MainClass} ${MainParam} > ${Empty} 2>&1 &
         sleep 2
-		echo "nohup java -Dappliction=${Tag} ${JVM} -jar ${MainClass}  > ${Empty} 2>&1 &"
+		echo "nohup java -Dappliction=${Tag} ${JVM} -jar ${MainClass} ${MainParam} > ${Empty} 2>&1 &"
     fi
 }
 function stop() {

@@ -16,10 +16,11 @@
         </encoder>
     </appender>
 
-
     <appender name="fileWarnLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
-            <level>WARN</level>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>INFO</level>
+            <onMatch>DENY</onMatch>
+            <onMismatch>ACCEPT</onMismatch>
         </filter>
         <encoder>
             <pattern>
@@ -35,9 +36,9 @@
 
     <appender name="fileInfoLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <filter class="ch.qos.logback.classic.filter.LevelFilter">
-            <level>WARN</level>
-            <onMatch>DENY</onMatch>
-            <onMismatch>ACCEPT</onMismatch>
+            <level>INFO</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
         </filter>
         <file>${log.path}</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">

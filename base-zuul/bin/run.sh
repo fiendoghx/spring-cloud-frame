@@ -3,9 +3,9 @@
 Tag="base-zuul"
 #主程序启动文件
 #MainClass="org.springframework.boot.loader.JarLauncher"
-MainClass="../resource/base-zuul-1.0.jar --spring.profile.active=proc"
+MainClass="../resource/base-zuul-1.0.jar --spring.profiles.active=proc"
 #JVM参数配置
-JVM="-server -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=128m -Xms1g -Xmx1g -Xmn512m -Xss256k -XX:SurvivorRatio=8 -XX:+UseConcMarkSweepGC"
+JVM="-server -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=128m -Xms256m -Xmx256m -Xmn128m -Xss256k -XX:SurvivorRatio=8 -XX:+UseConcMarkSweepGC"
 #主程序文件路径
 #MainProgram="../resource/BOOT-INF/classes "
 #主程序参数

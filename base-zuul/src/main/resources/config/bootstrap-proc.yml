@@ -10,4 +10,4 @@ eureka:
 
   client:
     serviceUrl:
-      defaultZone: http://${custom.eurekaServer.name}:${custom.eurekaServer.password}@spring-cloud-01:15001/eureka/,http://${custom.eurekaServer.name}:${custom.eurekaServer.password}@spring-cloud-02:15001/eureka/
+      defaultZone: http://${custom.eurekaServer.name}:${custom.eurekaServer.password}@spring-cloud-01:12001/eureka/,http://${custom.eurekaServer.name}:${custom.eurekaServer.password}@spring-cloud-02:12001/eureka/

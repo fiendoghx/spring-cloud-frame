@@ -1,0 +1,11 @@
+eureka:
+  instance:
+    #多注册中心的不能使用localhost或者127.0.0.1,否则Eureka注册中心会认为另外一个注册中心是unavailable的
+    hostname: spring-cloud-01
+    # 心跳检测检测与续约时间
+    # 测试时将值设置设置小些，保证服务关闭后注册中心能及时踢出服务
+    lease-renewal-interval-in-seconds: 1
+    lease-expiration-duration-in-seconds: 2
+  client:
+    serviceUrl:
+      defaultZone: http://${security.user.name}:${security.user.password}@spring-cloud-02:${server.port}/eureka/

@@ -1,4 +1,3 @@
-
 spring:
   cloud:
     #ribbon重试机制
