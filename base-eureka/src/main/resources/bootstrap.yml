@@ -8,8 +8,17 @@ spring:
       name: eureka
       password: eureka_132
 
+  profiles:
+    active: test
+
+  cloud:
+    config:
+      uri: http://localhost:12000
+
 server:
   port: 12001
+
+
 
 eureka:
   instance:
@@ -19,4 +28,6 @@ eureka:
     metadata-map:
       user.name: ${security.user.name}
       user.password: ${security.user.password}
+    lease-renewal-interval-in-seconds: 1
+    lease-expiration-duration-in-seconds: 2
 

@@ -1,14 +1,14 @@
+
 custom:
   eurekaServer:
     name: eureka
     password: eureka_132
-
 spring:
   application:
-    name: service-helloworld
+    name: base-gateway
+
   profiles:
     active: test
 
-
 server:
-  port: 13001
+  port: 12002

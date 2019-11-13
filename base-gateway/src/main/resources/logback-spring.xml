@@ -3,9 +3,9 @@
 <configuration debug="false" scan="true" scanPeriod="1 seconds">
     <!--<include resource="org/springframework/boot/logging/logback/base.xml"/>-->
     <jmxConfigurator/>
-    <contextName>base-zuul</contextName>
+    <contextName>base-gateway</contextName>
 
-    <property name="log.path" value="../logs/base-zuul.log"/>
+    <property name="log.path" value="../logs/base-gateway.log"/>
 
     <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
         <!-- <filter class="ch.qos.logback.classic.filter.ThresholdFilter" >

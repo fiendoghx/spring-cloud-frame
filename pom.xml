@@ -10,7 +10,7 @@
 
     <modules>
         <module>base-eureka</module>
-        <module>base-zuul</module>
+        <module>base-gateway</module>
         <module>service-helloworld</module>
     </modules>
 

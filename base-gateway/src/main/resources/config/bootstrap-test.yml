@@ -10,4 +10,4 @@ eureka:
 
   client:
     serviceUrl:
-      defaultZone: http://${custom.eurekaServer.name}:${custom.eurekaServer.password}@localhost:12001/eureka/
+      defaultZone: http://localhost:12001/eureka/
