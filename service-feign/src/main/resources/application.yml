@@ -1,31 +1,12 @@
-
 spring:
   cloud:
-
+    #ribbon重试机制
     loadbalancer:
       retry:
         enabled: true
 
-    gateway:
-      discovery:
-        locator:
-          enabled: true
-          #服务名小写
-          lower-case-service-id: true
-
-      routes:
-      - id: consumer-service
-        # lb代表从注册中心获取服务，且已负载均衡方式转发
-        uri: lb://consumer-service
-        predicates:
-        - Path=/consumer/**
-        # 加上StripPrefix=1，否则转发到后端服务时会带上consumer前缀
-        filters:
-        - StripPrefix=1
-
-#ribbon重试机制
 ribbon:
-  ReadTimeout: 28000
+  ReadTimeout: 5000
   ConnectTimeout: 2000
   MaxAutoRetries: 1
   MaxAutoRetriesNextServer: 1

@@ -6,12 +6,14 @@
 
     <groupId>com.fiendo</groupId>
     <artifactId>spring-cloud-frame</artifactId>
+    <packaging>pom</packaging>
     <version>1.0</version>
 
     <modules>
         <module>base-eureka</module>
         <module>base-gateway</module>
         <module>service-helloworld</module>
+        <module>service-feign</module>
     </modules>
 
 

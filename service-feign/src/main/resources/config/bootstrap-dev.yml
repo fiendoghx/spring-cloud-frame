@@ -1,0 +1,13 @@
+eureka:
+  instance: # Submitting the credentials using Eureka:
+      metadata-map:
+        user.name: ${security.user.name}
+        user.password: ${security.user.password}
+      # 心跳检测检测与续约时间
+      # 测试时将值设置设置小些，保证服务关闭后注册中心能及时踢出服务
+      lease-renewal-interval-in-seconds: 1
+      lease-expiration-duration-in-seconds: 2
+
+  client:
+    serviceUrl:
+      defaultZone: http://${custom.eurekaServer.name}:${custom.eurekaServer.password}@spring-cloud-01:12001/eureka/,http://${custom.eurekaServer.name}:${custom.eurekaServer.password}@spring-cloud-02:12001/eureka/

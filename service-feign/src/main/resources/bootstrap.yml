@@ -1,0 +1,14 @@
+custom:
+  eurekaServer:
+    name: eureka
+    password: eureka_132
+
+spring:
+  application:
+    name: service-feign
+  profiles:
+    active: test
+
+
+server:
+  port: 13002
